@@ -3,7 +3,7 @@
 
 import Foundation
 
-public struct MovieData: Decodable {
+public struct MovieData: Codable, Sendable {
     public let adult: Bool
     public let backdrop_path: String?
     public let genre_ids: [Int]
@@ -36,7 +36,7 @@ public struct MovieData: Decodable {
     }
 }
 
-public struct MovieResponse: Decodable {
+public struct MovieResponse: Codable, Sendable {
     public let page: Int
     public let results: [MovieData]
     public let total_pages: Int
